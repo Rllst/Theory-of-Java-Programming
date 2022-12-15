@@ -33,7 +33,7 @@ public class Variant11 {
         }
         return new int[]{a, b};
     }
-
+//JAVADOCS
     public static CardinalPoint caseTask(CardinalPoint start, int n1, int n2) {
         int dir = start.ordinal() + n1 + n2;
         dir = dir > 0 ? dir : dir + 4;
@@ -74,15 +74,15 @@ public class Variant11 {
     }
 
     public static int[][] matrixTask(int[][] matrix, int N, int M) {
-        boolean flag = false;
+        boolean backward = false;
         int[][] res = new int[N][M];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
-                if (flag) {
+                if (backward) {
                     res[i][j] = matrix[i][M - j - 1];
                 } else res[i][j] = matrix[i][j];
             }
-            flag = !flag;
+            backward = !backward;
         }
         return res;
     }
